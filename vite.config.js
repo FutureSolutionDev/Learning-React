@@ -7,7 +7,7 @@ export default defineConfig({
   cacheDir: ".vite",
   envPrefix: "H_",
   server: {
-    port: 3000,
+    port: 9900,
     host: true,
   },
   preview: {
@@ -15,6 +15,7 @@ export default defineConfig({
     host: true,
   },
   build: {
+    chunkSizeWarningLimit: 5120, // 5120kb = 5MB
     manifest: false,
     sourcemap: false,
     rollupOptions: {
@@ -25,7 +26,7 @@ export default defineConfig({
       },
       output: {
         entryFileNames: "[name].js",
-        assetFileNames: "[name][extname]",
+        assetFileNames: "[name].[ext]",
       }
     }
   }
